@@ -7,6 +7,7 @@ group 'CatchUp'
 version '1.0-Beta'
 
 mainClassName = "App"
+
 repositories {
     mavenCentral()
 }

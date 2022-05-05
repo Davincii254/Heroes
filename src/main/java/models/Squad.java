@@ -9,7 +9,7 @@ public class Squad {
     private int maxSize;
     private boolean squadFull;
 
-    public Squad(String squadName, String squadCause, int maxSize, boolean squadFull) {
+    public Squad(String squadName, String squadCause, int maxSize) {
         this.squadName = squadName;
         this.squadCause = squadCause;
         this.maxSize = maxSize;

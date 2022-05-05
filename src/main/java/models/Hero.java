@@ -18,7 +18,7 @@ public class Hero {
         this.heroPower = heroPower;
         this.heroWeakness = heroWeakness;
         this.avatarUrl = avatarUrl;
-        this.squadId = squadId;
+        this.squadId = this.squadId;
     }
 
 

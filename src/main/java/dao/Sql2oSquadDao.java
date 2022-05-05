@@ -8,11 +8,11 @@ import org.sql2o.Sql2oException;
 
 import java.util.List;
 
-public class sql2oSquadDao implements SquadDao{
+public class Sql2oSquadDao implements SquadDao{
 
     private final Sql2o sql2o;
 
-    public sql2oSquadDao(Sql2o sql2o) {
+    public Sql2oSquadDao(Sql2o sql2o) {
         this.sql2o = sql2o;
     }
 
