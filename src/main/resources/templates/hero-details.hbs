@@ -1,0 +1,32 @@
+{{#partial "content"}}
+
+    <div class="container text-start mx-auto">
+
+        <div class="card mb-3 mx-auto" style="max-width: 540px;">
+            <div class="row g-0">
+                <div class="col-md-5">
+                    <img src="{{hero.avatarUrl}}" class="" width="540px" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">{{hero.heroName}}</h5>
+                        <p class="card-text">
+                        <p>{{hero.heroName}}'s P1 Info</p>
+                        <p>{{hero.heroName}}'s Squad <a href="/squads/{{hero.squadId}}">{{squad.squadName}}</a> </p>
+                        <p>Name: {{hero.heroName}}</p>
+                        <p>Age: {{hero.heroAge}}</p>
+                        <p>SuperPower: {{hero.heroPower}}</p>
+                        <p>Weakness: {{hero.heroWeakness}}</p>
+                        <p class="card-footer">
+                        <p><a class="btn btn-danger justify-content-left" href="/squads/{{hero.squadId}}/heros/{{hero.id}}/delete">Kill {{hero.heroName}}</a> </p>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+{{/partial}}
+
+{{> "layout.hbs"}}

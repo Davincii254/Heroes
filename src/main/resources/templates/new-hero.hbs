@@ -1,0 +1,52 @@
+{{#partial "content"}}
+
+    <h2 class="text-center">Create A New Hero</h2>
+
+    {{#if squads}}
+
+        <div class="container-sm form-group form-control" style="max-width: 500px;">
+            <form action="/heros" method="post">
+                <label class="border border-primary px-1 my-2" for="heroName">Hero Name:</label>
+                <input type="text" id="heroName" name="heroName" required>
+                <br>
+
+                <label class="border border-primary my-2" for="heroPower">SuperPower:</label>
+                <input type="text" id="heroPower" name="heroPower" required>
+                <br>
+
+                <label class="border border-primary px-2 my-2" for="heroAge">Hero Age :</label>
+                <input type="number" name="heroAge" id="heroName" required>
+                <br>
+
+                <label class="border border-primary px-2 my-2" for="heroWeakness">Weakness: </label>
+                <input type="text" id="heroWeakness" name="heroWeakness" required>
+                <br>
+
+                <label class="border border-primary px-2 my-2" for="avatarUrl">Avatar Url:</label>
+                <input type="text" id="avatarUrl" name="avatarUrl" required>
+                <br>
+                <br>
+
+                <label for="squadId">Add hero to a squad:</label>
+                <select id="squadId" name="squadId" required>
+                    {{#each squads}}
+                        <option value="{{id}}">{{squadName}}</option>
+                    {{/each}}
+                </select>
+                <br>
+                <br>
+
+                <p class="text-end"><button class="btn btn-primary text-end" type="submit">Activate your hero <i class="fa fa-save"></i></button></p>
+
+            </form>
+
+        </div>
+        <p class="text-center">Don't see your squad?.  <a class="btn btn-outline-primary" href="/squads/new"> Create a new one.</a> </p>
+
+    {{else}}
+        <h3 class="text-center text-info"><i class="fas fa-info"></i>  You'll need to add a squad before you add a hero <br><br> <a class="btn btn-outline-primary" href="/squads/new">Create A New Squad 🦸</a>  </h3>
+    {{/if}}
+
+{{/partial}}
+
+{{> "layout.hbs"}}

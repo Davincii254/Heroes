@@ -1,0 +1,24 @@
+{{#partial "content"}}
+
+    <div class="container-lg form-control text-center">
+        <h1 class="text-center">Add a new Squad.</h1>
+        <form action="/squads" method="post">
+            <label for="squadName">Squad Name :</label>
+            <input type="text" id="squadName" name="squadName" required>
+            <br>
+
+            <label for="squadCause">Squad Cause :</label>
+            <input type="text" id="squadCause" name="squadCause" required>
+            <br>
+
+            <label for="maxSize">Maximum Size:</label>
+            <input type="number" name="maxSize" id="maxSize" required>
+            <br>
+
+            <button class="btn btn-primary" type="submit">Save Squad</button>
+        </form>
+    </div>
+
+{{/partial}}
+
+{{> "layout.hbs"}}

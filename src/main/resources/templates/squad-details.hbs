@@ -1,0 +1,22 @@
+{{#partial "content"}}
+<div class="container text-start mx-auto" style="max-width: 500px;">
+    <h1 class="text-center">{{squad.squadName}}</h1>
+    <div class="border text-center">
+        <h5>Cause:  {{squad.squadCause}}</h5>
+        <h5>Maximum Size {{squad.maxSize}} Members</h5>
+    </div>
+    <p>Heros in the {{squad.squadName}} squad</p>
+
+    <ul class="text-left" style="list-style-type:none;">
+        {{#each heros}}
+            <li  class="text-start"  style="none">
+               <p class="" ><a href="/squads/{{squadId}}/heros/{{id}}"> <i class="fa fa-eye"></i> {{heroName}} </a></p>
+            </li>
+        {{/each}}
+    </ul>
+
+    <a class="btn btn-danger" href="/squads/{{squad.id}}/delete">Destroy The {{squad.squadName}} <i class="fa fa-exclamation-triangle"></i></a>
+</div>
+{{/partial}}
+
+{{> "layout.hbs"}}
