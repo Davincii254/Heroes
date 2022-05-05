@@ -1,0 +1,60 @@
+{{#partial "header"}}{{/partial}}
+{{#partial "content"}}
+
+    {{#if squads}}
+
+        <div class="container text-center">
+            {{#if heros}}
+                <h1>Super Heros!</h1>
+                <p><a class="btn btn-outline-primary" href="/heros/new">+ Add New Hero</a></p>
+                <p data-bs-toggle="tooltip" data-bs-placement="top"
+                   title="Call from Thanos, All hero's will be wiped , the action is irreversible"><a
+                        class="btn btn-danger" href="/squads/delete">Destroy Planet Earth <i
+                        class="fa fa-skull-crossbones"></i> </a></p>
+
+                <div class="d-flex row">
+                    <div class="row justify-content-between">
+                        {{#each heros}}
+                            <div class="card" style="width: 18rem;">
+                                <h5 class="card-title pt-1"> {{heroName}} </h5>
+                                <img class="card-img-top pt-2" src="{{avatarUrl}}" alt="Card image cap"
+                                     height="200px" width="200px">
+                                <div class="card-body">
+                                    <p class="card-text"><a href="/squads/{{squadId}}">Hero Squad: {{squadName}}</a>
+                                    </p>
+                                    <a href="squads/{{squadId}}/heros/{{id}}" class="btn btn-primary"> Spy
+                                        On {{heroName}} </a>
+                                </div>
+                            </div>
+
+                        {{/each}}
+                    </div>
+
+                </div>
+            {{else}}
+
+                <div class="container text-center border border-primary mt-5">
+                    <p>Some Caring Guardian Created a squad or two</p>
+                    <p>But, sad enough Thanos had killed all the heros :(</p>
+                    <p>You'll need a team of hero's to whoop Thanos</p>
+                    <p>Create a hero and add them to your squad, my luck be with you in your quest to beat
+                        Thanos.</p>
+                    <p><a class="btn btn-outline-primary" href="/heros/new">Create a New Hero</a></p>
+                </div>
+
+            {{/if}}
+        </div>
+
+    {{else}}
+
+        <div class="container text-center border border-primary mt-5">
+            <p>Ooops!, Some rogue Thanos Agent Wiped all life form on earth <i class="fa fa-heart-broken"></i></p>
+            <p>I think you were the agent though 🤔, create a super hero to prove that you're not the evil agent.</p>
+            <p><a class="btn btn-outline-primary" href="/heros/new">Add A New Hero <i class="fa fa-mask"></i></a></p>
+        </div>
+
+    {{/if}}
+
+{{/partial}}
+
+{{> "layout.hbs"}}
